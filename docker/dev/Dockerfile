@@ -7,6 +7,7 @@ RUN apt-get update && \
 
 # Activate virtual environment and install wheel support
 RUN . /appenv/bin/activate && \
+	pip install pip --upgrade && \
 	pip install wheel --upgrade
 
 # PIP environment variables (NOTE: must be set after installing wheel)
