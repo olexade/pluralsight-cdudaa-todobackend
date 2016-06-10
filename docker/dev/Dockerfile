@@ -7,7 +7,7 @@ RUN apt-get update && \
 
 # Activate virtual environment and install wheel support
 RUN . /appenv/bin/activate && \
-	pip install pip --upgrade && \
+	# pip install pip --upgrade && \
 	pip install wheel --upgrade
 
 # PIP environment variables (NOTE: must be set after installing wheel)
@@ -15,6 +15,9 @@ ENV WHEELHOUSE=/wheelhouse PIP_WHEEL_DIR=/wheelhouse PIP_FIND_LINKS=/wheelhouse 
 
 # OUTPUT: Build artifacts (wheels) are output here
 VOLUME /wheelhouse
+
+# OUTPUT: Build cache
+VOLUME /build
 
 # OUTPUT: Test reports are output here
 VOLUME /reports
