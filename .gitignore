@@ -1,8 +1,8 @@
 venv
-target
-reports
 *.pyc
 *.sqlite3
-src/*egg-info
 src/.coverage
 src/*.xml
+src/*egg-info
+target
+reports
